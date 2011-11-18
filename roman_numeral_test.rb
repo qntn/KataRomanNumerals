@@ -1,21 +1,24 @@
 require "test/unit"
-require "nombre_romain"
+require "roman_numeral.rb"
+require "integer.rb"
 
-class NombreRomainTest < Test::Unit::TestCase
+class RomanNumeralTest < Test::Unit::TestCase
   def setup
-    @nr = NombreRomain.new
     @int = 0
   end
   
   def test_return_1_for_I
-    assert_equal @nr.convert_to_int("I"), 1
+    @nr = RomanNumeral.new "I" 
+    assert_equal 1, @nr.convert_to_int
   end
   
   def test_return_2_for_II
-    assert_equal @nr.convert_to_int("II"), 2
+    @nr = RomanNumeral.new "II"
+    assert_equal 2, @nr.convert_to_int
   end
   
   def test_return_II_for_2
-    assert_equal @int.convert_to_roman_number(2), "II"
+    @int = 2
+    assert_equal "II", @int.convert_to_roman_numeral
   end
 end

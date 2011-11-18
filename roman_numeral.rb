@@ -1,16 +1,12 @@
-class NombreRomain
+class RomanNumeral < String
+  # ROMAN_AND_ARABIC_NUMERALS =  
+  #   [
+  #     [1, "I"]
+  #   ]
   
-  TAB_CONVERT_STRING = { "I"  => 1,
-                         "II" => 2}
-  TAB_CONVERT_INT    = { 1  => "I",
-                         2  => "II"}
-  
-  def convert_to_int val
-      return TAB_CONVERT_INT[val]
-  end
-  
-  def convert_to_nombre_romain val
-    return TAB_CONVERT_STRING[val]
+  def convert_to_int
+    return 1 if self == "I"
+    return 2 if self == "II"
   end
 end
 
